@@ -1,5 +1,6 @@
 // normalerweise nach ES6 module Syntax(ESM Syntax): import hello from './hello'
 
+/*  
 // jetzt aber so: require/commonjs syntax
 const hello = require('./hello')
 
@@ -11,3 +12,10 @@ hello()
 const random = require('./random')
 const max = Number(process.argv[2])
 console.log(random(max))
+*/
+
+const read = require('./read.js')
+read('hello.js')
+
+const countlines = require('./countlines.js')
+countlines()

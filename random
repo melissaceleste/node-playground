@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+// wenn das Ergebnis NaN ist, dann nimm undefined
+
+const input = Number(process.argv[2])
+const max = Number.isNaN(input) ? undefined : input
+const result = random(max)
+console.log(result)
+random(max)
+function random(max = 10) {
+  return Math.floor(Math.random() * (max + 1))
+}
+
+// das schreiben wir hin, um zu sagen, dass dieser Code mit node in der Shell ausgeführt werden soll
+// statt export default function jetzt:
+/* module.exports = function random(max = 10) {
+  return Math.floor(Math.random() * Math.floor(max + 1))
+}
+ */

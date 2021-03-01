@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+// Programm mit der man die Zeilen zählen kann
+// wie unsere Random Datei soll es aufzurufen sein
+// countLines ./.prettierrc  und das soll dann die Anzahl der Lines ausloggen
+// Bonusaufgabe: das gleiche nur das die Wörter gezählt werden
+//  console.log(data.split('\n').length)
+const chalk = require('chalk') // um bunte Texte im Terminal auszugeben, noch anpassen - siehe Screenshot 14:37 Uhr (1.März)
+const fs = require('fs')
+const file = process.argv[2]
+
+fs.readFile(file, { encoding: 'utf-8' }, (err, data) => {
+  if (err) {
+    console.log('ERROR', err)
+  } else {
+    console.log(data.split('\n').length)
+    /* zeigt mir die Anzahl der Zeilen in der Datei an: console.log(data.split('\n').length) */
+  }
+})
